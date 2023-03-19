@@ -43,7 +43,8 @@ npm --version
 ```
 
 #### Integrate Backend
-Edit the **.env** file, and fill in your backend server's IP address or domain in the `REACT_APP_BACKEND` value. This way, your web app frontend will be able to communicate with your backend.
+Edit the **.env** file, and fill in your backend server's IP address or domain in the `REACT_APP_BACKEND` value. This way, your web app frontend will be able to communicate with your backend. <br/>
+As mentioned above, this file can also be used to change the access port for users on the internet. This is done by changing the `PORT` value.
 <br/>
 <br/>
 
