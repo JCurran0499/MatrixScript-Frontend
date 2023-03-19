@@ -7,7 +7,7 @@ There are two versions of MatrixScript. One is written in [Java](https://github.
 
 This project is designed to be run on two different servers, a frontend and backend. This repository represents the **frontend**. Below are instructions for setting up and running the frontend server. The backend can be found [here](https://github.com/JCurran0499/MatrixScript-Backend).<br/>
 In many cases, especially your local device, it is acceptable to run both servers on the same host. However, it is best practice to set up independent public servers (ex: virtual machines) for this purpose. <br/> <br/>
-The frontend will be accessed by users through the internet on HTTP port 80. Configure your Security Group as such.
+The frontend will be accessed by users through the internet on the port of your choosing. The default in this repository is port **8080** in order to avoid admin permissions blocks associated with ports lower than 1024, but this can be easily changed using the *.env* file the project root. Once you've decided on your port, or decided to keep the default port 8080, configure your Security Group as such.
 
 ### Download and Installation
 
