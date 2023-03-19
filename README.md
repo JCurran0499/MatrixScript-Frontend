@@ -53,4 +53,4 @@ As mentioned above, this file can also be used to change the access port for use
 sudo npm start
 ```
 
-From here, the MatrixScript UI can be accessed on your standard HTTP port, at `<server_domain_or_ip>`.
+From here, the MatrixScript UI can be accessed on your standard HTTP port, at `<server_domain_or_ip>:<server_port>`.
