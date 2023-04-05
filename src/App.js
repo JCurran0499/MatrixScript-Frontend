@@ -1,5 +1,6 @@
 import { Title } from './components/title/Title'
 import { Box } from './components/box/Box'
+import { Annotations } from './components/annotations/Annotations'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css';
@@ -22,9 +23,7 @@ function App() {
     <div className="App">
       <Title/>
       <Box sessionToken={session}/>
-      <div id="annotations">
-        <p>&copy; Jack Curran, 2023 | <a href="https://google.com">Read the Docs</a></p>
-      </div>
+      <Annotations/>
     </div>
   );
 }

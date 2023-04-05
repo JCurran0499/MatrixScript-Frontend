@@ -29,6 +29,7 @@ export const Box = (props) => {
                 className="history"
                 isCommand={true}
                 isMatrix={false}
+                isError={false}
                 text={c}/>
             )
         
@@ -37,14 +38,22 @@ export const Box = (props) => {
 
     const addCommandResponseHistory = (cr) => {
         let c
-        let m
+        let isMat
+        let isErr
         if (cr.response.matrix) {
             c = cr.response.matrix
-            m = true
+            isMat = true
+            isErr = false
+        }
+        else if (cr.response.error) {
+            c = cr.response.error
+            isMat = false
+            isErr = true
         }
         else {
             c = cr.response
-            m = false
+            isMat = false
+            isErr = false
         }
 
         const k = history.length
@@ -53,7 +62,8 @@ export const Box = (props) => {
                 key={k} 
                 className="history"
                 isCommand={false}
-                isMatrix={m}
+                isMatrix={isMat}
+                isError={isErr}
                 text={c}/>
             )
         

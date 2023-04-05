@@ -30,7 +30,7 @@ export const Input = (props) => {
         .then(() => toggleTriggerCommand(true))
         .catch((err) => {
             toggleDisabled(true)
-            alert("Your session has expired. Please refresh your page to generate a new session")
+            alert("Your session has expired. Please refresh your page to generate a new session.")
         })
     }
 

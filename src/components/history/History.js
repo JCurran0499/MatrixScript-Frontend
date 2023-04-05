@@ -3,7 +3,7 @@ import './History.css'
 export const History = (props) => {
     const fullText = props.text.length > 0
 
-    const classname = props.isCommand ? "historyCommand" : (props.text.startsWith("Error: ") ? "historyError" : "historyResponse")
+    const classname = props.isCommand ? "historyCommand" : (props.isError ? "historyError" : "historyResponse")
 
     const pList = (() => {
         const pList = []
