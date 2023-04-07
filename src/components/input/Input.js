@@ -22,8 +22,7 @@ export const Input = (props) => {
             },
             data: {
               command: command
-            },
-            withCredentials: true
+            }
         })
         .then((res) => res.data)
         .then((json) => handleCommandResponse(json))
