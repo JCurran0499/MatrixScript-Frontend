@@ -2,7 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-       - export REACT_APP_BACKEND=MatrixScript-ALB-1766899615.us-east-1.elb.amazonaws.com
+       - export REACT_APP_BACKEND=54.196.247.228
        - npm install
        - npm run build
 artifacts:

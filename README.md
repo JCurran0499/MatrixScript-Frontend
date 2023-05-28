@@ -10,7 +10,7 @@ In many cases, especially your local device, it is acceptable to run both server
 
 ### Frontend Port
 
-The frontend will be accessed by users through the internet on the port of your choosing. The default in this repository is port **8080** in order to avoid admin permissions blocks associated with ports lower than 1024, but this can be easily changed using the *.env* file the project root. For example, admin users can run on the default HTTP port 80 or, if you have an SSL certificate, the HTTPS port 443. Once you've decided on your port, or decided to keep the default port 8080, configure your Security Group as such.
+The frontend will be accessed by users through the internet on the port of your choosing. The default in this repository is port **80**. In order to avoid admin permissions blocks associated with ports lower than 1024, this can be easily changed using the *.env* file the project root. For example, admin users can run on the default HTTP port 80 or, if you have an SSL certificate, the HTTPS port 443, but non-admin users will be required to change the environment variable to another port. Once you've decided on your port, or decided to keep the default port 80, configure your Security Group as such.
 
 ### Download and Installation
 
