@@ -2,7 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-       - export REACT_APP_BACKEND=54.196.247.228
+       - export REACT_APP_BACKEND=https://api-web.matrixscript.net
        - npm install
        - npm run build
 artifacts:

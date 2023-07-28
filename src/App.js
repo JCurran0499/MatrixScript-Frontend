@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: `http://${process.env.REACT_APP_BACKEND}:4567/token`
+      url: `${process.env.REACT_APP_BACKEND}/token`
     })
     .then((res) => res.data)
     .then((json) => json.sessionToken)

@@ -16,7 +16,7 @@ export const Input = (props) => {
         
         axios({
             method: 'post',
-            url: `http://${process.env.REACT_APP_BACKEND}:4567/`,
+            url: `${process.env.REACT_APP_BACKEND}/`,
             params: {
                 'token': props.sessionToken
             },
