@@ -2,7 +2,8 @@ version: 0.2
 phases:
   build:
     commands:
-       - export REACT_APP_BACKEND=https://api-web.matrixscript.net
+       - mv .env .local.env
+       - mv .prod.env .env
        - npm install
        - npm run build
 artifacts:
