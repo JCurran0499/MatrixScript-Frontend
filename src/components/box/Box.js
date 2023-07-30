@@ -40,13 +40,15 @@ export const Box = (props) => {
         let c
         let isMat
         let isErr
-        if (cr.response.matrix) {
-            c = cr.response.matrix
+        console.log(cr)
+
+        if (cr.matrix) {
+            c = cr.matrix
             isMat = true
             isErr = false
         }
-        else if (cr.response.error) {
-            c = cr.response.error
+        else if (cr.errMessage) {
+            c = cr.errMessage
             isMat = false
             isErr = true
         }
