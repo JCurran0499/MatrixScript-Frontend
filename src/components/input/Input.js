@@ -29,8 +29,18 @@ export const Input = (props) => {
         .then(() => toggleTriggerCommand(true))
         .catch((err) => {
             toggleDisabled(true)
-            alert("Your session has expired. Please refresh your page to generate a new session.")
+            errorAlert(err)
         })
+    }
+
+    const errorAlert = (err) => {
+        if (err.response.status == 401) {
+            alert("Your session has expired. Please refresh your page to generate a new session.")
+        }
+
+        else if (err.response.status == 500) {
+            alert("The server encountered an unexpected error. We apologize for the inconvenience and we will look into this issue.")
+        }
     }
 
     /* Waterfall Effect */

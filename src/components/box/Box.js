@@ -40,7 +40,6 @@ export const Box = (props) => {
         let c
         let isMat
         let isErr
-        console.log(cr)
 
         if (cr.matrix) {
             c = cr.matrix
