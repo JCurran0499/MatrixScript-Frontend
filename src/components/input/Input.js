@@ -3,10 +3,13 @@ import axios from 'axios'
 import './Input.css'
 
 export const Input = (props) => {
-    const [command, handleCommand] = useState('')
+    const [command, handleCommand] = useState("")
     const [commandResponse, handleCommandResponse] = useState({})
     const [triggerCommand, toggleTriggerCommand] = useState(false)
     const [triggerCommandResponse, toggleTriggerCommandResponse] = useState(false)
+
+    const [commandHistory, handleCommandHistory] = useState([])
+    const [commandIndex, handleCommandIndex] = useState(-1)
 
     const [disabled, toggleDisabled] = useState(false)
 
@@ -46,6 +49,9 @@ export const Input = (props) => {
     /* Waterfall Effect */
     useEffect(() => {
         if (triggerCommand) {
+            handleCommandHistory([...commandHistory, command])
+            handleCommandIndex(-1)
+
             props.onSubmitCommand(command)
             handleCommand('')
             
@@ -64,6 +70,27 @@ export const Input = (props) => {
     /* ----------------- */
 
 
+    const searchHistory = (k) => {
+        if (k === "ArrowUp" && (commandIndex === -1 || commandIndex > 0)) {
+            if (commandIndex === -1) handleCommandIndex(commandHistory.length - 1)
+            else handleCommandIndex(commandIndex - 1)
+        }
+
+        else if (k === "ArrowDown") {
+            if (commandIndex !== -1) handleCommandIndex(commandIndex + 1)
+        }
+    }
+
+    useEffect(() => {
+        if (commandIndex > -1 && commandIndex < commandHistory.length) {
+            handleCommand(commandHistory[commandIndex])
+        }
+        else if (commandIndex >= commandHistory.length) {
+            handleCommand("")
+            handleCommandIndex(-1)
+        }
+    }, [commandIndex])
+
     return (
         <div id="input">
             <p>{">> "}</p>
@@ -74,6 +101,7 @@ export const Input = (props) => {
                     value={command}
                     disabled={disabled}
                     onChange={(e) => handleCommand(e.target.value)}
+                    onKeyDown={(e) => searchHistory(e.code)}
                     autoFocus
                 />
                 <br/>
