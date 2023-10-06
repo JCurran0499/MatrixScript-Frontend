@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     axios({
-      method: 'get',
+      method: 'post',
       url: `${process.env.REACT_APP_BACKEND}/token`
     })
     .then((res) => res.data)
