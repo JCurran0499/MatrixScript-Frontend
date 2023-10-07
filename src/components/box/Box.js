@@ -78,12 +78,14 @@ export const Box = (props) => {
         <div>
             <div id="box" onClick={focusInput}>
                 {history}
-                <Input
-                    id="input"
-                    sessionToken={props.sessionToken}
-                    onSubmitCommand={addCommandHistory}
-                    onSubmitCommandResponse={addCommandResponseHistory}
-                />
+                {props.sessionToken && (
+                    <Input
+                        id="input"
+                        sessionToken={props.sessionToken}
+                        onSubmitCommand={addCommandHistory}
+                        onSubmitCommandResponse={addCommandResponseHistory}
+                    />
+                )}
             </div>
             <button 
                 onClick={clearBox}
