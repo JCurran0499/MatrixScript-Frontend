@@ -87,7 +87,7 @@ export const Box = (props) => {
                     />
                 )}
             </div>
-            <button 
+            <button
                 onClick={clearBox}
             >CLEAR</button>
         </div>
