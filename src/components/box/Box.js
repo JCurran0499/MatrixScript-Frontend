@@ -6,8 +6,11 @@ import './Box.css'
 export const Box = (props) => {
     const [history, handleHistory] = useState([])
 
-    const commandInput = document.getElementById("commandInput")
+    let commandInput = null
     const focusInput = () => {
+        if (commandInput == null) {
+            commandInput = document.getElementById("commandInput")
+        }
         commandInput.focus()
     }
 
